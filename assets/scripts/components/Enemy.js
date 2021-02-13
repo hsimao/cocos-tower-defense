@@ -63,6 +63,9 @@ cc.Class({
 
     // 移動完後再重新執行, 前往下個移動位置
     this.moveTo(targetPosition).then(() => this.move());
+
+    // 轉向要移動的方向
+    this.rotateTo(targetPosition);
   },
 
   getDistance(targetPosition) {
@@ -82,5 +85,13 @@ cc.Class({
       const sequence = cc.sequence(moveToAction, cc.callFunc(resolve));
       this.node.runAction(sequence);
     });
+  },
+  rotateTo(targetPosition) {
+    this.node.angle = this.getAngle(targetPosition);
+  },
+
+  // 計算要轉的角度
+  getAngle({ x, y }) {
+    return (Math.atan2(y - this.node.y, x - this.node.x) * 180) / Math.PI;
   }
 });
