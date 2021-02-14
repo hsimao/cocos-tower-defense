@@ -5,6 +5,7 @@ cc.Class({
 
   properties: {
     velocity: 150,
+    rotationSpeed: 300,
     levelMap: {
       default: null,
       type: LevelMap
@@ -87,7 +88,13 @@ cc.Class({
     });
   },
   rotateTo(targetPosition) {
-    this.node.angle = this.getAngle(targetPosition);
+    const angle = -this.getAngle(targetPosition);
+    const distance = Math.abs(angle - this.node.angle);
+
+    if (distance) {
+      const time = distance / this.rotationSpeed;
+      this.node.runAction(cc.rotateTo(time, angle));
+    }
   },
 
   // 計算要轉的角度

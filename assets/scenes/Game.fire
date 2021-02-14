@@ -885,6 +885,7 @@
     },
     "_enabled": true,
     "velocity": 150,
+    "rotationSpeed": 30,
     "levelMap": {
       "__id__": 17
     },
