@@ -3,21 +3,11 @@ cc.Class({
 
   properties: {},
 
-  // LIFE-CYCLE CALLBACKS:
-
-  // onLoad () {},
-
-  start() {
-    this.initTileMap();
-  },
-
-  // update (dt) {},
-
-  initTileMap() {
+  init() {
     this.tileMap = this.getComponent(cc.TiledMap);
 
     this.roadsLayer = this.tileMap.getLayer("roads");
-    this.towerLayer = this.tileMap.getLayer("towers");
+    this.towersLayer = this.tileMap.getLayer("towers");
 
     const tileSize = this.tileMap.getTileSize();
     this.tileWidth = tileSize.width;

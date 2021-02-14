@@ -85,6 +85,9 @@
       },
       {
         "__id__": 23
+      },
+      {
+        "__id__": 24
       }
     ],
     "_prefab": null,
@@ -885,7 +888,7 @@
     },
     "_enabled": true,
     "velocity": 150,
-    "rotationSpeed": 30,
+    "rotationSpeed": 300,
     "levelMap": {
       "__id__": 17
     },
@@ -934,5 +937,18 @@
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_id": "88A60YNXRNBp0DuXIhif48"
+  },
+  {
+    "__type__": "c25564XQSBOzqlAaYiKjX+C",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "map": {
+      "__id__": 17
+    },
+    "_id": "c0O5JuCe1PLbBdQNER7vH1"
   }
 ]
