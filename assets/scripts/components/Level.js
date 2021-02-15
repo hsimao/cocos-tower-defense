@@ -1,5 +1,6 @@
 import LevelMap from "LevelMap";
 import PanelCreate from "PanelCreate";
+import Towers from "Towers";
 
 cc.Class({
   extends: cc.Component,
@@ -12,6 +13,10 @@ cc.Class({
     map: {
       default: null,
       type: LevelMap
+    },
+    towers: {
+      default: null,
+      type: Towers
     }
   },
 
@@ -23,6 +28,7 @@ cc.Class({
   init() {
     this.map.init();
     this.panelCreate.init(this.map);
+    this.towers.init(this.map);
   },
 
   setEvents() {
@@ -30,8 +36,9 @@ cc.Class({
     this.panelCreate.node.on("button-click", this.onTowerCreate, this);
   },
 
-  onTowerCreate() {
-    console.log("onTowerCreate");
+  onTowerCreate(data) {
+    this.towers.create(data.towerKey, data.towerCoordinates);
+    this.panelCreate.hide();
   },
 
   onMapTouch(e) {
