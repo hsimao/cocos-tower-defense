@@ -33,5 +33,12 @@ cc.Class({
     towerNode.setPosition(
       cc.v2(x + this.map.tileWidth / 2, y + this.map.tileHeight / 2)
     );
+  },
+
+  // 取出 items 內相同座標的 towerComponent
+  getByCoordinates(coordinates) {
+    return this.items.find(
+      ({ coordinates: { x, y } }) => x === coordinates.x && y === coordinates.y
+    );
   }
 });
