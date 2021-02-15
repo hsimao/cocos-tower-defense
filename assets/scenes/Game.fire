@@ -896,6 +896,7 @@
       "__id__": 19
     },
     "_enabled": true,
+    "life": 5,
     "velocity": 150,
     "rotationSpeed": 300,
     "levelMap": {
