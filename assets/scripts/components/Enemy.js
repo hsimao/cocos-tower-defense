@@ -4,12 +4,17 @@ cc.Class({
   extends: cc.Component,
 
   properties: {
+    life: 5,
     velocity: 150,
     rotationSpeed: 300,
     levelMap: {
       default: null,
       type: LevelMap
     }
+  },
+
+  onLoad() {
+    this.node.on("hit", () => this.handleHit());
   },
 
   start() {
@@ -19,6 +24,13 @@ cc.Class({
     this.node.setPosition(this.getCurrrentTargetPosition());
 
     this.move();
+  },
+
+  handleHit() {
+    this.life--;
+    if (this.life === 0) {
+      this.node.destroy();
+    }
   },
 
   getCurrentTarget() {
@@ -87,6 +99,7 @@ cc.Class({
       this.node.runAction(sequence);
     });
   },
+
   rotateTo(targetPosition) {
     const angle = -this.getAngle(targetPosition);
     const distance = Math.abs(angle - this.node.angle);
@@ -100,5 +113,12 @@ cc.Class({
   // 計算要轉的角度
   getAngle({ x, y }) {
     return (Math.atan2(y - this.node.y, x - this.node.x) * 180) / Math.PI;
+  },
+
+  onCollisionEnter(other, self) {
+    // 被子彈擊中
+    if (other.node.name === "fire") {
+      this.node.emit("hit");
+    }
   }
 });

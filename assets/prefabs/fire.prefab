@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "tower1",
+    "_name": "fire",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -42,8 +42,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 42,
-      "height": 55
+      "width": 23,
+      "height": 34
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -95,7 +95,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "128c4e91-67f7-4459-8e2c-d5ed66fbd5c6"
+      "__uuid__": "75e7521f-3f86-45d8-b79f-5bd68f3f7a08"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -112,22 +112,17 @@
     "_id": ""
   },
   {
-    "__type__": "151f1vccSJI4Jm+ePvSKmiY",
+    "__type__": "ecce7G4IWhDyLm97868TQQI",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 1
     },
     "_enabled": true,
-    "fire": {
-      "__uuid__": "e883de0a-29b1-4ff9-9200-de62604cb5d8"
-    },
-    "rotationSpeed": 500,
-    "reloadTime": 0.5,
     "_id": ""
   },
   {
-    "__type__": "cc.CircleCollider",
+    "__type__": "cc.BoxCollider",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -140,7 +135,11 @@
       "x": 0,
       "y": 0
     },
-    "_radius": 256,
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 23,
+      "height": 34
+    },
     "_id": ""
   },
   {
@@ -149,9 +148,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "a58b6529-11bc-49fb-a79e-380a678a924d"
+      "__uuid__": "e883de0a-29b1-4ff9-9200-de62604cb5d8"
     },
-    "fileId": "fbbTbmqZFMYLAQedPEO6KI",
+    "fileId": "dcHIMUsy1FLrfrEzU7+w/T",
     "sync": false
   }
 ]
