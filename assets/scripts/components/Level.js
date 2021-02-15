@@ -34,6 +34,13 @@ cc.Class({
   setEvents() {
     this.map.node.on(cc.Node.EventType.TOUCH_END, this.onMapTouch, this);
     this.panelCreate.node.on("button-click", this.onTowerCreate, this);
+
+    // 啟用監聽碰撞事件
+    this.enableCollision();
+  },
+
+  enableCollision() {
+    cc.director.getCollisionManager().enabled = true;
   },
 
   onTowerCreate(data) {
